@@ -1,259 +1,162 @@
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
-
-html {
-  font-size: 10px;
+body {
+  font-family: sans-serif;
+  background-color: #fafafa;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   box-sizing: border-box;
-}
-
-img {
-  width: 100%;
-  max-width: 100%;
-  height: 100%;
 }
 
 a {
   text-decoration: none;
 }
 
-body {
-  background-color: #fafafa;
-}
-
-#wrapper {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-top: 10rem;
-}
-
 .container {
-  width: 100%;
-  max-width: 93.5rem;
-  margin: 3rem auto 0;
-}
-
-#wrapper > .container {
+  max-width: 1000px;
+  margin: 0 auto;
   display: flex;
-  padding: 0 8rem;
-}
-
-.phone-app-demo {
-  height: 61.8rem;
-  background: url("./images/mobile-app.png") center no-repeat;
-  flex: 1;
-}
-
-.form-data {
-  width: 100%;
-  max-width: 35rem;
-  margin-top: 3rem;
-}
-
-.form-data form {
-  background-color: #fff;
-  border: 2px solid #eee;
-  display: flex;
+  justify-content: center;
   flex-direction: column;
-  padding: 2rem 4rem;
-  text-align: center;
+  align-items: center;
+  margin-top: 3rem;
+  font-size: 14px;
 }
 
-.logo img {
-  width: 17.5rem;
-  margin-bottom: 2.5rem;
-}
-
-.form-data form input {
-  padding: .8rem;
-  margin-bottom: .5rem;
-  border: 2px solid #eee;
-  border-radius: .4rem;
-}
-
-.form-btn {
-  margin: 1rem 0 1.5rem;
-  height: 3rem;
-  background-color: #3897f0;
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #fff;
-  border: none;
-  border-radius: .4rem;
-  cursor: pointer;
-}
-
-.has-separator {
-  font-size: 1.3rem;
-  color: #999999;
-  text-transform: uppercase;
-  position: relative;
-  margin-bottom: 2.5rem;
-}
-
-.has-separator::before,
-.has-separator::after {
-  content: "";
-  position: absolute;
-  background-color: #eee;
-  width: 40%;
-  height: 2px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.has-separator::before {
-  left: 0;
-}
-
-.has-separator::after {
-  right: 0;
-}
-
-.facebook-login {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #385185;
-  margin-bottom: 2.5rem;
-}
-
-.facebook-login i {
-  font-size: 2rem;
-  margin-right: .7rem;
-}
-
-.password-reset {
-  font-size: 1.2rem;
-  color: #003569;
-}
-
-.sign-up {
-  text-align: center;
-  font-size: 1.4rem;
-  color: #262626;
-  padding: 2rem 0;
-  background-color: #fff;
-  border: 2px solid #eee;
-  margin: 1rem 0;
-}
-
-.sign-up a {
-  color: #3897f0;
-  font-weight: bold;
-}
-
-.get-the-app {
-  font-size: 1.4rem;
-  text-align: center;
-}
-
-.get-the-app span {
-  display: block;
-  margin: 2rem 0;
-  color: #262626;
-}
-
-.badges {
+.box {
+  max-width: 350px;
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 1px;
+  margin: 0 0 10px;
+  padding: 10px 0;
+  flex-grow: 1;
 }
 
-.badges img {
-  max-width: 14rem;
+.heading {
+  margin: 22px auto 12px;
+  background-image: url("https://www.instagram.com/static/bundles/es6/sprite_core_b20f2a3cd7e4.png/b20f2a3cd7e4.png");
+  background-position: -98px 0;
+  height: 51px;
+  width: 177px;
+  overflow: hidden;
+}
+
+.field {
+  margin: 10px 0;
+  position: relative;
+  font-size: 14px;
+  width: 100%;
+  text-overflow: ellipsis;
+}
+
+input {
+  padding: 9px 0px 7px 9px;
+  font-size: 12px;
+  width: 16rem;
+  height: 1.2rem;
+  outline: none;
+  background: #fafafa;
+  border-radius: 3px;
+  border: 1px solid #efefef;
+}
+
+/* label intial position*/
+
+label {
+  position: absolute;
+  pointer-events: none;
+  left: 10px;
+  padding-bottom: 15px;
+  transform: translateY(10px);
+  line-height: 6px;
+  transition: all ease-out 0.1s;
+  font-size: 14px;
+  color: #999;
+  padding-top: 6px;
+}
+
+/* hiding placeholder in all browsers */
+
+input::placeholder {
+  visibility: hidden;
+}
+
+/* hiding  placeholder in mozilla */
+.login-form ::-moz-placeholder {
+  color: transparent;
+}
+
+/* label final position */
+input:not(:placeholder-shown) + label {
+  transform: translateY(0);
+  font-size: 11px;
+}
+
+/* input padding increases if placeholder is not shown */
+input:not(:placeholder-shown) {
+  padding-top: 14px;
+  padding-bottom: 2px;
+}
+
+.login-button {
+  text-align: center;
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid transparent;
+  background-color: #3897f0;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
   cursor: pointer;
 }
 
-.badges img:first-child {
-  margin-right: 1rem;
-}
-
-footer {
-  padding: 5rem 0;
-}
-
-footer .container {
+.separator {
   display: flex;
   justify-content: space-between;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 1.3rem;
-  margin-top: 0;
-  flex-wrap: wrap;
+  align-items: center;
+  color: #999;
+  margin-top: 6px;
 }
 
-.footer-nav ul {
+.separator .line {
+  height: 1px;
+  width: 40%;
+  background-color: #dbdbdb;
+}
+
+.other {
   display: flex;
-  flex-wrap: wrap;
-  list-style: none;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-.footer-nav ul li {
-  margin-right: 1.6rem;
+.fb-login-btn {
+  margin: 1rem;
+  border: 0;
+  cursor: pointer;
+  font-size: 14px;
+  color: #385185;
+  font-weight: 600;
+  background: transparent;
 }
 
-.footer-nav ul li a {
+.fb-icon {
+  color: #385185;
+  font-size: 1rem;
+  padding-right: 1px;
+}
+
+.forgot-password {
+  font-size: 11px;
   color: #003569;
 }
 
-.copyright-notice {
-  color: #999999;
-}
-
-/* MEDIA QUERIES */
-
-@media (max-width: 900px) {
-  .phone-app-demo {
-    display: none;
-  }
-
-  .form-data {
-    margin: 0 auto;
-  }
-  
-  .wrapper > .container {
-    padding: 0;
-  }
-
-  footer .container {
-    padding: 0 2rem;
-    justify-content: center;
-  }
-
-  .footer-nav ul {
-    justify-content: center;
-  }
-
-  .footer-nav ul li {
-    margin-bottom: 1rem;
-  }
-}
-
-@media (max-width: 450px) {
-  .wrapper {
-    padding-top: 0;
-  }
-
-  .form-data form {
-    background-color: transparent;
-    border: none;
-    padding: 0 2rem;
-  }
-
-  .sign-up {
-    background-color: transparent;
-    border: none;
-    margin: 4rem 0;
-  }
-
-  footer {
-    padding-bottom: 2rem;
-  }
+.signup {
+  color: #3897f0;
+  font-weight: 600;
 }
