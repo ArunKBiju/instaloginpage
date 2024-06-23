@@ -1,162 +1,205 @@
+* {
+    border: none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-  font-family: sans-serif;
-  background-color: #fafafa;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  box-sizing: border-box;
+    background-color: #fafafa;
+    height: 100vh;
 }
 
-a {
-  text-decoration: none;
+main {
+    height: 100vh;
+    margin: auto;
+    max-width: 935px;
 }
 
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 3rem;
-  font-size: 14px;
+a { text-decoration: none; }
+h1 { margin: 20px 0; }
+ul { list-style: none; }
+
+/**
+ * Flex rules
+ */
+
+.flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
 }
 
-.box {
-  max-width: 350px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: #ffff;
-  border: 1px solid #e6e6e6;
-  border-radius: 1px;
-  margin: 0 0 10px;
-  padding: 10px 0;
-  flex-grow: 1;
+.direction-column {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-box-direction: normal;
+    -moz-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
 }
 
-.heading {
-  margin: 22px auto 12px;
-  background-image: url("https://www.instagram.com/static/bundles/es6/sprite_core_b20f2a3cd7e4.png/b20f2a3cd7e4.png");
-  background-position: -98px 0;
-  height: 51px;
-  width: 177px;
-  overflow: hidden;
+.justify-content-center {
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
 }
 
-.field {
-  margin: 10px 0;
-  position: relative;
-  font-size: 14px;
-  width: 100%;
-  text-overflow: ellipsis;
+.align-items-center {
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
 }
 
-input {
-  padding: 9px 0px 7px 9px;
-  font-size: 12px;
-  width: 16rem;
-  height: 1.2rem;
-  outline: none;
-  background: #fafafa;
-  border-radius: 3px;
-  border: 1px solid #efefef;
+.flex-wrap {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
-/* label intial position*/
+/**
+ *
+ */
 
-label {
-  position: absolute;
-  pointer-events: none;
-  left: 10px;
-  padding-bottom: 15px;
-  transform: translateY(10px);
-  line-height: 6px;
-  transition: all ease-out 0.1s;
-  font-size: 14px;
-  color: #999;
-  padding-top: 6px;
+.panel {
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    margin-bottom: 10px;
+    padding: 10px;
 }
 
-/* hiding placeholder in all browsers */
+#auth { max-width: 350px; }
+#mobile { max-width: 454px; }
 
-input::placeholder {
-  visibility: hidden;
+#mobile img {
+    height: 618px;
 }
 
-/* hiding  placeholder in mozilla */
-.login-form ::-moz-placeholder {
-  color: transparent;
+/**
+ * Login section
+ */
+.login-with-fb,
+form { width: 100%; }
+
+.register,
+form { padding: 30px 20px; }
+
+.login-with-fb { padding: 30px 20px 20px 20px; }
+
+form .sr-only { display: none; }
+
+form input {
+    background-color: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    color: #808080;
+    margin-bottom: 8px;
+    padding: 10px 10px;
+    width: 100%;
 }
 
-/* label final position */
-input:not(:placeholder-shown) + label {
-  transform: translateY(0);
-  font-size: 11px;
+form input::placeholder {
+    color: #808080;
 }
 
-/* input padding increases if placeholder is not shown */
-input:not(:placeholder-shown) {
-  padding-top: 14px;
-  padding-bottom: 2px;
+form input:focus {
+    border: 1px solid #808080;
+    outline: none;
 }
 
-.login-button {
-  text-align: center;
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid transparent;
-  background-color: #3897f0;
-  color: #fff;
-  font-weight: 600;
-  font-size: 14px;
-  cursor: pointer;
+form button {
+    background-color: #0095f6;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    height: 35px;
+    margin-top: 10px;
+    width: 100%;
 }
 
-.separator {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #999;
-  margin-top: 6px;
+/**
+ * Separator login form from login with fb
+ */
+.separator span {
+    background-color: #dbdbdb;
+    height: 1px;
+    width: calc(100% - 10px);
 }
 
-.separator .line {
-  height: 1px;
-  width: 40%;
-  background-color: #dbdbdb;
+.separator .or {
+    color: #808080;
+    font-weight: bold;
 }
 
-.other {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+.separator { padding: 0 20px; }
+.separator span:first-child { margin-right: 10px;}
+.separator span:last-child { margin-left: 10px;}
+
+/**
+ * Login with fb section
+ */
+.login-with-fb a { 
+    color: #385185; 
 }
 
-.fb-login-btn {
-  margin: 1rem;
-  border: 0;
-  cursor: pointer;
-  font-size: 14px;
-  color: #385185;
-  font-weight: 600;
-  background: transparent;
+.login-with-fb > a { font-size: 12px; }
+.login-with-fb div a { font-weight: bold; }
+.login-with-fb div { margin-bottom: 15px; }
+
+/**
+ * Register section
+ */
+.register * { font-size: 14px; }
+.register a { 
+    color: #0095f6;
+    font-weight: bold;
 }
 
-.fb-icon {
-  color: #385185;
-  font-size: 1rem;
-  padding-right: 1px;
+.register p { margin-right: 5px; }
+
+/**
+ * App download
+ */
+.app-download { padding: 15px; }
+.app-download p { padding: 10px 0; }
+.app-download img { 
+    height: 40px; 
+    margin: 0 5px;
 }
 
-.forgot-password {
-  font-size: 11px;
-  color: #003569;
+/**
+ * Footer
+ */
+footer {
+    margin: 0 auto 30px auto;
+    max-width: 935px;
 }
+footer ul { margin-bottom: 20px; }
+footer ul li { margin: 0 10px 10px; } 
+footer ul li a { color: #385185; }
+footer .copyright { color: #808080; }
+footer ul li a,
+footer .copyright { 
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+ }
 
-.signup {
-  color: #3897f0;
-  font-weight: 600;
+
+/**
+ * Media queries
+ */
+
+@media screen and (max-width: 767px) {
+    main { margin: 30px auto 50px auto; }
+    footer .copyright,
+    footer ul li a { font-size: 13px; }
 }
